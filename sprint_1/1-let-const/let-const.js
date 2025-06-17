@@ -7,9 +7,10 @@
  **/
 
 
-
 // Код задания 1
-
+const appName = "nameApp";
+let currentUser = "userName";
+let isDarkTheme = false
 
 
 /**
@@ -22,7 +23,11 @@
 
 
 // Код задания 2
-
+const username = "Name";
+let age = 18;
+let status = "offline";
+username = "newName"; // Вызовет ошибку, т.к. переменная const для неизменяемый значений
+let text = `Привет, ${username}!`
 
 
 /**
@@ -33,6 +38,13 @@
 
 
 // Код задания 3
+const userCount = 10;
+// значение переменной const переопределить нельзя
+// 2 варианта как исправить это: создать новую переменную где мы увеличим значение прибавляя значение переменной userCount
+let userCountNew = userCount + 10;
+// или изменить переменную const на let. Тогда мы сможешь изменять наше значение не меняя названия переменной
+let userCountPrimer = 10;
+userCountPrimer = 20;
 
 
 /** Задание 4.
@@ -50,4 +62,6 @@
  *  **/
 
 // Ответ на задание 4
-
+console.log(a); // 10. переменная var доступна во всей функции
+console.log(b); // ошибка. Блоковая область видимости
+console.log(c); // ошибка. Блоковая область видимости
