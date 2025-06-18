@@ -5,6 +5,12 @@
  **/
 
 // Код задания 1
+const person = {
+    firstName: 'Василя',
+    lastName: 'Набиева',
+    age: 19
+};
+console.log(person.lastName + " " + person.firstName); // Набиева Василя
 
 
 /**
@@ -13,6 +19,9 @@
  **/
 
 // Код задания 2
+person.city = "Moscow"
+console.log(person.lastName + " " + person.firstName + " живет в - " + person.city); // Набиева Василя живет в - Moscow
+
 
 /**
  * Задание 3.
@@ -20,6 +29,7 @@
  **/
 
 // Код задания 3
+delete person.age;
 
 
 /**
@@ -28,6 +38,12 @@
  **/
 
 // Код задания 4
+for (let key in person){
+    console.log(key, person[key])
+} 
+// firstName Василя
+// lastName Набиева
+// city Moscow
 
 
 /**
@@ -36,6 +52,10 @@
  **/
 
 // Код задания 5
+function task5(obj){
+    return Object.keys(obj);
+}
+console.log(task5(person)) // ["firstName", "lastName", "city"]
 
 
 /**
@@ -44,6 +64,11 @@
  **/
 
 // Код задания 6
+function task6(obj){
+    return Object.values(obj);
+}
+console.log(task6(person)) // ["Василя", "Набиева", "Moscow"]
+
 
 /**
  * Задание 7.
@@ -51,5 +76,11 @@
  **/
 
 // Код задания 7
-
+const person2 = {
+    name: 'Василя',
+    greet() {
+    console.log("Привет, " + this.name);
+    }
+};
+person2.greet(); // Привет, Василя
 
