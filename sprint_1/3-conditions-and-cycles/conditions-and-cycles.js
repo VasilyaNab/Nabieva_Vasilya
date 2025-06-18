@@ -7,14 +7,18 @@
 
 
 // Код задания 1
-
 function checkAge(age) {
-    //
+    if(age<18){
+        console.log("Доступ запрещён");
+    }else{
+        console.log("Доступ разрешён");
+    }
 }
 
 checkAge(10)
 checkAge(18)
 checkAge(26)
+
 
 /**
  * Задание 2.
@@ -23,6 +27,21 @@ checkAge(26)
 
 
 // Код задания 2
+// 1
+for (let i = 1; i <= 10; i++){
+    console.log(i)
+}
+// 2
+let i = 1;
+while(i <= 10){
+    console.log(i);
+    i++;
+}
+// 3
+do{
+    console.log(i);
+    i++
+}while(i <= 10);
 
 
 /**
@@ -33,6 +52,14 @@ checkAge(26)
 
 
 // Код задания 3
+function rating(stars){
+    let res = '';
+    for(let i= 0; i < 5; i++){
+        if (i < stars) res += "★";
+        else res += "☆";
+    }
+    console.log(res);
+}
 
 
 /**
@@ -45,6 +72,12 @@ checkAge(26)
  **/
 
 // Код задания 4
+function block(){
+    const time = new Date();
+    const hour = time.getHours();
+    if (hour >= 22 || hour < 7) return "Ночная блокировка: операции недоступны";
+    else return true;
+}
 
 
 /**
@@ -74,6 +107,9 @@ const productList = [
 ];
 
 // Код задания 5
+productList.forEach(products => {
+    console.log(`${products.name} - ${products.price}₽`);
+});
 
 
 /**
@@ -86,6 +122,11 @@ const productList = [
 
 
 // Код задания 6
+productList.forEach(products => {
+    const discontPrice = products.price * 0.8;
+    if (discontPrice > 40) console.log(`${products.name} - ${discontPrice}₽`);
+});
+
 
 /**
  * Задание 7.
@@ -97,3 +138,11 @@ const productList = [
 
 
 // Код задания 7
+function task7(){
+    for (let i = 1; i <= 100; i++){
+        if (i % 3 === 0 && i % 5  === 0) console.log("FizzBuzz");
+        else if (i % 3 === 0) console.log("Fizz");
+        else if (i % 5 === 0) console.log("Buzz");
+        else console.log(i);
+    }
+}
