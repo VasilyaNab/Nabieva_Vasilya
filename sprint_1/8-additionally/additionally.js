@@ -5,9 +5,9 @@
  * @return {Function} counter
  */
 const createCounter = function (n) {
-
+    let count = n;
     return function () {
-
+        console.log(count++);
     };
 };
 
@@ -18,6 +18,7 @@ const createCounter = function (n) {
  * counter() // 12
  */
 
+
 // Код задания 2
 /**
  * @param {number[]} nums
@@ -26,8 +27,21 @@ const createCounter = function (n) {
  * @return {number}
  */
 const reduce = function(nums, fn, init) {
-
+    let result = init;
+    let size = nums.length;
+    for (let i = 0; i < size; i++) {
+        result = fn(result, nums[i]); // получается, result + следущее число в массиве. наприме:
+        // nums = [1,2,3,4]
+        // fn = function sum(accum, curr) { return accum + curr; }
+        // init = 0
+        // result = 0 + 1 = 1
+        // result = 1 + 2 = 3
+        // result = 3 + 3 = 6
+        // result = 6 + 4 = 10
+    }
+    return result;
 };
+
 
 // Код задания 3
 /**
@@ -60,8 +74,10 @@ function memoize(fn) {
  * @return {Promise}
  */
 var addTwoPromises = async function(promise1, promise2) {
-
+        const result = await Promise.all([promise1, promise2]);
+        return (result[0] + result[1]);
 };
+
 
 /**
  * addTwoPromises(Promise.resolve(2), Promise.resolve(2))
@@ -76,7 +92,19 @@ var addTwoPromises = async function(promise1, promise2) {
  * @return {Array}
  */
 const chunk = function(arr, size) {
-
+    const result = [];
+    let arr2 = [];
+    for (const i of arr){
+        arr2.push(i);
+        if(arr2.length === size){
+            result.push(arr2);
+            arr2 = [];
+        }
+    }
+    if (arr2.length > 0){
+        result.push(arr2);
+    }
+    return result;
 };
 
 
