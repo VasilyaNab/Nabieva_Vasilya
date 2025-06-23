@@ -19,8 +19,8 @@ console.log(person.lastName + " " + person.firstName); // Набиева Вас�
  **/
 
 // Код задания 2
-person.city = "Moscow"
-console.log(person.lastName + " " + person.firstName + " живет в - " + person.city); // Набиева Василя живет в - Moscow
+person.city = "Moscow";
+console.log(`${person.lastName} ${person.firstName} живет в - ${person.city}`); // Набиева Василя живет в - Moscow
 
 
 /**
@@ -53,7 +53,11 @@ for (let key in person){
 
 // Код задания 5
 function task5(obj){
-    return Object.keys(obj);
+    const result = [];
+    for (const i in obj) {
+        result.push(i);
+    }
+    return result;
 }
 console.log(task5(person)) // ["firstName", "lastName", "city"]
 
@@ -65,7 +69,11 @@ console.log(task5(person)) // ["firstName", "lastName", "city"]
 
 // Код задания 6
 function task6(obj){
-    return Object.values(obj);
+    const result = [];
+    for (const i in obj) {
+        result.push(obj[i]);
+    }
+    return result;
 }
 console.log(task6(person)) // ["Василя", "Набиева", "Moscow"]
 
@@ -79,7 +87,7 @@ console.log(task6(person)) // ["Василя", "Набиева", "Moscow"]
 const person2 = {
     name: 'Василя',
     greet() {
-    console.log("Привет, " + this.name);
+        console.log(`Привет, ${this.name}`); 
     }
 };
 person2.greet(); // Привет, Василя

@@ -59,20 +59,24 @@ let example2 = changeNumType + 5; //128. выполняется арифмети
 // Код задания 3
 let info = 10;
 function check(info) {
-    if (typeof info == "string") {
-        console.log("Это строка");
-    }else if (typeof info == "number"){
-        console.log("Это число");
-    }else if (typeof info == "boolean"){
-        console.log("Это логический тип");
-    }else if (typeof info == "undefined"){
-        console.log("Это переменная без значения");
-    }else if (typeof info == "symbol"){
-        console.log("Это символ");
-    }else if (typeof info == "bigint"){
-        console.log("Это переменная с большим количеством целых чисел");
-    }else{
-        console.log("Это объект");
+    switch (typeof info) {
+        case "string": console.log("Это строка");
+            break;
+        case "number": console.log("Это число");
+            break;
+        case "boolean": console.log("Это логический тип");
+            break;
+        case "undefined":
+            console.log("Это переменная без значения");
+            break;
+        case "symbol":
+            console.log("Это символ");
+            break;
+        case "bigint":
+            console.log("Это переменная с большим количеством целых чисел");
+            break;
+        default:
+            console.log("Это объект");
     }
 }
 check(info);

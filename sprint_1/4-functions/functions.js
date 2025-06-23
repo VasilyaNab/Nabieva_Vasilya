@@ -40,7 +40,7 @@ console.log(sum(3,1)); // 4
 // Код задания 4
 function isEven(num){
    if (num % 2 === 0) return true;
-   else return false;
+   return false;
 }
 console.log(isEven(8)) // true
 console.log(isEven(7)) // false
@@ -55,6 +55,8 @@ console.log(isEven(7)) // false
 
 // Код задания 5
 const formatName = (firstName, lastName) => {
+   if (!firstName) return lastName;
+   if (!lastName) return firstName;
    return `${lastName} ${firstName[0]}.`
 }
 console.log(formatName("Василя", "Набиева")) // Набиева В.
@@ -71,10 +73,12 @@ console.log(formatName("Василя", "Набиева")) // Набиева В.
 
 // Код задания 6
 function translateStatus(code){
-   if (code === 'success') return 'Успешно';
-   else if (code === 'error' ) return 'Ошибка';
-   else if (code === 'pending' ) return 'В ожидании';
-   else return 'Неизвестно';
+   switch (code) {
+      case 'success': return 'Успешно';
+      case 'error': return 'Ошибка';
+      case 'pending': return 'В ожидании';
+      default: return 'Неизвестно';
+   }
 }
 console.log(translateStatus("success")) // Успешно
 console.log(translateStatus("error")) // Ошибка

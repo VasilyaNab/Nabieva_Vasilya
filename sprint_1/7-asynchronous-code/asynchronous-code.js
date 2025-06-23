@@ -45,7 +45,7 @@ sequentialLogs();
 function checkNumber(num) {
     return new Promise((resolve, reject) => {
         if (num > 10) resolve("OK");
-        else reject("Too small"); 
+        reject("Too small"); 
     });
 }
 checkNumber(11)

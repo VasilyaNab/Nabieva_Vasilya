@@ -76,7 +76,7 @@ function block(){
     const time = new Date();
     const hour = time.getHours();
     if (hour >= 22 || hour < 7) return "Ночная блокировка: операции недоступны";
-    else return true;
+    return true;
 }
 
 
