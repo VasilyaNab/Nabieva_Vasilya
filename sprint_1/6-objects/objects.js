@@ -10,7 +10,7 @@ const person = {
     lastName: 'Набиева',
     age: 19
 };
-console.log(person.lastName + " " + person.firstName); // Набиева Василя
+console.log(`${person.lastName} ${person.firstName}`); // Набиева Василя
 
 
 /**
